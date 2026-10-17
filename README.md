@@ -1,118 +1,142 @@
 # Quassar Risk Research
 
-**Financial Risk Analytics | Portfolio Exposures | Stress Testing | Scenario Analysis**
+**Financial Risk Analytics | Portfolio Exposures | Stress Testing | Quantitative Risk Modeling**
 
 ## Overview
 
-Quassar Risk Research is a quantitative research and computational engineering initiative within Quassar Capital, focused on the mathematical analysis of financial risk across portfolios, asset classes, and global market environments.
+Quassar Risk Research is a quantitative research and computational engineering initiative within Quassar Capital, focused on the mathematical analysis, statistical measurement, and interpretation of financial risk across portfolios, asset classes, and global market environments.
 
-The initiative brings together statistical modeling, financial mathematics, computational methods, and disciplined risk analysis to examine portfolio sensitivities, market exposures, potential loss distributions, and the behavior of financial systems under changing conditions.
+Its research scope encompasses portfolio risk decomposition, systematic and idiosyncratic exposures, financial loss distributions, market sensitivities, stress testing, and the evaluation of quantitative risk models under varying economic and financial conditions.
 
-Research is guided by methodological rigor, numerical reliability, reproducibility, and a clear understanding of model assumptions and limitations.
+The methodological framework emphasizes mathematical rigor, statistical reliability, numerical accuracy, transparent assumptions, reproducibility, and disciplined interpretation of model limitations.
 
 ## Research Domains
 
 ### Portfolio Risk Analytics
 
-Quantitative methods for evaluating portfolio volatility, concentration, diversification, correlation structures, and potential sources of financial loss.
+Quantitative methods for examining portfolio volatility, concentration, diversification, dependence structures, and potential sources of financial loss.
 
-Research areas include covariance estimation, portfolio risk decomposition, marginal and component risk contributions, downside risk measures, and the sensitivity of portfolio outcomes to changing market conditions.
+Research topics include covariance estimation, portfolio risk decomposition, marginal and component risk contributions, downside risk measures, and the sensitivity of portfolio outcomes to changing market conditions.
 
 ### Market & Factor Exposures
 
-Mathematical and statistical approaches to measuring exposures across asset classes, market variables, and systematic risk factors.
+Mathematical and statistical approaches to measuring portfolio exposures across asset classes, financial variables, and systematic risk factors.
 
 Areas of interest include factor sensitivities, exposure attribution, cross-asset dependencies, nonlinear relationships, and the stability of estimated exposures across different market environments.
 
 ### Value at Risk & Expected Shortfall
 
-Statistical methods for estimating portfolio loss distributions and evaluating tail risk.
+Statistical methods for estimating portfolio loss distributions, quantifying downside risk, and evaluating extreme-loss exposure.
 
-Research encompasses historical simulation, parametric approaches, Monte Carlo methods, expected shortfall estimation, distributional assumptions, and the limitations of risk estimates under extreme market conditions.
+Research encompasses historical simulation, parametric estimation, Monte Carlo methods, quantile-based risk measures, expected shortfall estimation, and the limitations of distributional assumptions under stressed market conditions.
+
+Particular attention is given to confidence levels, loss conventions, estimation uncertainty, and the distinction between expected shortfall and realized portfolio losses.
 
 ### Stress Testing
 
-Computational frameworks for examining portfolio behavior under adverse hypothetical conditions and historically observed market disruptions.
+Computational methods for examining portfolio behavior under adverse hypothetical conditions and historically observed financial market disruptions.
 
-Research topics include multidimensional shocks, correlated market movements, liquidity deterioration, volatility changes, and the propagation of financial stress across interconnected exposures.
+Research topics include multidimensional market shocks, correlated price movements, volatility changes, credit spread widening, liquidity deterioration, and the interaction of simultaneous financial stress factors.
 
-### Scenario Analysis
+Stress testing is treated as a conditional analytical exercise rather than a probabilistic forecast of future market events.
 
-Mathematical methods for constructing, evaluating, and comparing economic and financial scenarios.
+### Scenario-Based Risk Analysis
 
-Areas of interest include interest rate changes, equity market movements, credit spread adjustments, foreign exchange fluctuations, volatility regimes, and cross-asset interactions.
+Mathematical approaches to evaluating portfolio sensitivities and potential losses under defined economic and financial scenarios.
+
+Areas of interest include interest rate changes, equity market movements, foreign exchange fluctuations, credit conditions, volatility regimes, and cross-asset shock transmission.
+
+Within the Quassar Capital research architecture, this domain emphasizes the measurement and interpretation of portfolio risk conditional on specified scenarios, while Quassar Scenarios addresses the broader mathematical construction and analysis of macro-financial scenarios.
+
+### Liquidity & Market Risk
+
+Quantitative approaches to examining the relationship between market liquidity, transaction costs, price variability, and financial risk.
+
+Research topics include liquidity-sensitive risk measures, market depth, bid-ask spreads, price impact, funding constraints, and the limitations of conventional risk estimates during periods of market stress.
 
 ### Model Risk & Validation
 
 Research methods for evaluating quantitative model assumptions, estimation uncertainty, data quality, numerical stability, and the reliability of analytical outputs.
 
-Particular attention is given to sensitivity analysis, backtesting, benchmark comparisons, parameter uncertainty, model limitations, and the interpretation of results.
+Particular attention is given to sensitivity analysis, backtesting, benchmark comparisons, parameter uncertainty, model specification risk, and the interpretation of results under changing market conditions.
 
 ## Quantitative Research Methodology
 
-Research and computational development are guided by the following principles:
+The quantitative research methodology is organized around the following principles:
 
-- **Mathematical Rigor:** Clearly defined financial quantities, statistical assumptions, mathematical formulations, and analytical procedures.
-- **Statistical Reliability:** Appropriate estimation methods, uncertainty analysis, robustness assessment, and recognition of sampling limitations.
-- **Numerical Verification:** Evaluation of computational accuracy, convergence, stability, and numerical error.
-- **Model Validation:** Comparison with appropriate benchmarks, reference calculations, historical observations, and independently verifiable analytical results.
+- **Mathematical Rigor:** Clearly defined financial quantities, explicit statistical assumptions, consistent mathematical formulations, and sound analytical procedures.
+- **Statistical Reliability:** Appropriate estimation methods, uncertainty quantification, robustness assessment, and recognition of sampling limitations.
+- **Risk Measurement Integrity:** Consistent treatment of loss definitions, measurement horizons, confidence levels, portfolio valuation assumptions, and aggregation methods.
+- **Numerical Verification:** Evaluation of computational accuracy, convergence, stability, and numerical approximation error.
+- **Model Validation:** Benchmark comparisons, statistical diagnostics, backtesting, sensitivity analysis, and explicit evaluation of model limitations.
+- **Dependence & Tail Risk:** Consideration of nonlinear exposures, changing correlations, distributional asymmetry, extreme outcomes, and dependence structures under market stress.
 - **Reproducibility:** Documented methodologies, controlled dependencies, traceable computational procedures, and repeatable analytical experiments.
-- **Software Engineering Quality:** Modular implementation, automated testing, code review, numerical regression testing, and performance assessment.
-- **Responsible Research:** Separation of general-purpose research methods from confidential investment information, proprietary systems, and sensitive financial data.
+- **Software Engineering Quality:** Modular design, automated testing, numerical regression analysis, code review principles, and appropriate performance assessment.
+- **Responsible Research:** Protection of confidential investment information, proprietary methodologies, internal portfolio data, and restricted financial datasets.
 
 ## Technology & Computational Infrastructure
 
-The computational architecture is determined by the mathematical complexity, statistical requirements, and performance characteristics of each research application.
+The computational scope encompasses programming languages and numerical technologies relevant to financial mathematics, statistical risk measurement, simulation, and scientific computing. Technology selection is determined by the analytical requirements of each application rather than by a prescribed implementation stack.
 
-Relevant programming languages and technologies include:
+Relevant technologies include:
 
-- **Python:** Statistical modeling, financial mathematics, numerical analysis, data processing, and quantitative research.
-- **C++:** Performance-sensitive numerical algorithms, simulation engines, and computational kernels.
-- **Rust:** Reliable systems programming, memory-safe computational components, and research infrastructure.
-- **Julia:** Scientific computing, numerical optimization, and mathematical modeling.
-- **GPU-Accelerated Computing:** Parallel numerical simulation and computationally intensive statistical workloads where technically justified.
+- **Python:** Statistical modeling, financial mathematics, numerical analysis, data processing, and quantitative risk research.
+- **C++:** Performance-sensitive numerical algorithms, computational kernels, and simulation-intensive applications.
+- **Rust:** Systems programming, memory-safe computational components, and reliable software architecture.
+- **Julia:** Scientific computing, mathematical modeling, numerical optimization, and statistical analysis.
+- **GPU-Accelerated Computing:** Parallel numerical simulation, matrix-intensive computation, and computationally demanding statistical workloads where technically justified.
 
-Engineering practices emphasize modular software design, automated verification, version control, continuous integration, benchmark evaluation, and reproducible computational environments.
-
-Technology selection is based on analytical requirements, computational efficiency, maintainability, and numerical reliability.
+Core engineering principles include modular architecture, version control, automated testing, numerical regression analysis, benchmark evaluation, scientific documentation, and reproducible computational environments.
 
 ## Research Governance & Model Integrity
 
-Quassar Risk Research applies a disciplined approach to quantitative methodology, model evaluation, and responsible handling of financial information.
+The research governance framework is defined by methodological transparency, statistical discipline, numerical reliability, information security, and responsible handling of financial research materials.
 
-**Research Integrity**
+### Research Integrity
 
-Analytical assumptions, statistical methods, computational procedures, and research conclusions are represented accurately, with appropriate consideration of uncertainty and methodological limitations.
+Financial risk measures, mathematical assumptions, estimation procedures, computational methods, and analytical conclusions require accurate representation, with appropriate consideration of uncertainty and methodological limitations.
 
-**Model Verification & Validation**
+### Model Verification & Validation
 
-Quantitative methods are evaluated through suitable numerical tests, statistical diagnostics, reference comparisons, and validation procedures appropriate to their intended research applications.
+Quantitative risk models are evaluated according to suitable numerical verification methods, statistical diagnostics, benchmark comparisons, sensitivity analysis, backtesting, and validation criteria relevant to their intended analytical applications.
 
-**Data Governance**
+### Risk Interpretation
 
-Research data is subject to appropriate quality controls, access restrictions, provenance requirements, and confidentiality considerations.
+Statistical risk estimates are conditional on their underlying data, assumptions, valuation methods, model specifications, and measurement horizons.
 
-**Information Security**
+Value at Risk does not establish a maximum possible loss. Expected Shortfall characterizes average losses within a specified tail of a modeled loss distribution and does not eliminate uncertainty about extreme outcomes.
 
-Proprietary investment models, confidential datasets, portfolio information, trading parameters, and internal financial infrastructure remain separate from materials intended for public disclosure.
+Stress-test results describe the consequences of defined assumptions and must not be interpreted as guarantees, forecasts, or exhaustive representations of possible market losses.
 
-**Intellectual Property**
+### Statistical Robustness
+
+Research interpretation accounts for estimation uncertainty, model specification risk, structural changes, dependence instability, data limitations, and the potential inadequacy of historical observations as representations of future market behavior.
+
+### Data Governance
+
+Research data is subject to appropriate quality controls, provenance requirements, confidentiality considerations, and access restrictions.
+
+### Information Security
+
+Proprietary investment models, confidential portfolio positions, internal risk parameters, restricted datasets, trading signals, and production financial infrastructure are excluded from public research materials.
+
+### Intellectual Property
 
 Public research materials are distinguished from proprietary methodologies, confidential information, and intellectual property belonging to Quassar Capital or third parties.
 
 ## Scope of Public Materials
 
-Publicly released research materials are subject to technical, institutional, intellectual property, and information security review.
+Public disclosure of research materials is subject to technical, institutional, intellectual property, and information security review.
 
-The scope of public materials may include general-purpose quantitative methods, nonproprietary financial simulations, reproducible analytical examples, research software, and technical documentation.
+Materials eligible for public distribution may include general-purpose quantitative risk methods, nonproprietary statistical models, reproducible numerical examples, educational financial simulations, and technical documentation.
 
-Confidential portfolio positions, investment signals, proprietary trading methodologies, restricted datasets, internal model parameters, and production infrastructure are excluded from public disclosure.
+Confidential portfolio positions, proprietary investment signals, restricted datasets, internal risk limits, production model parameters, trading methodologies, and proprietary financial infrastructure are excluded from public disclosure.
 
 ## Quassar Capital
 
-Quassar Capital is a New York-based investment firm conducting research across global financial markets.
+Quassar Capital is a New York–based hedge fund investing across global financial markets. Founded in 2012, the firm combines fundamental research, quantitative analysis, and investment judgment, with close attention to liquidity, market structure, and execution.
 
-Quassar Risk Research is a quantitative research and engineering initiative associated with the firm's broader financial research activities.
+Quassar Risk Research is a quantitative research and computational engineering initiative within Quassar Capital, focused on portfolio risk analytics, financial exposures, statistical risk measurement, stress testing, and quantitative model validation. Its research scope is distinct from the firm's individual investment strategies.
 
 **Official Website:** https://www.quassarcapital.com
 
@@ -120,4 +144,4 @@ Quassar Risk Research is a quantitative research and engineering initiative asso
 
 ---
 
-*Materials in this repository are intended for quantitative research and informational purposes only. They do not constitute investment advice, an offer to sell, or a solicitation to purchase any security or investment interest. Research descriptions do not constitute claims of certified performance, operational readiness, or suitability for a particular investment application. For additional institutional information, consult Quassar Capital's [Disclosures](https://www.quassarcapital.com/disclosures/).*
+*Materials in this repository are intended for quantitative research and informational purposes only. They do not constitute investment advice, an offer to sell, or a solicitation to purchase any security or investment interest. Statistical risk estimates, historical observations, and hypothetical stress-test results do not guarantee future market behavior or investment performance. Research descriptions do not constitute claims of certified performance, operational readiness, or suitability for a particular investment application. For additional institutional information, consult Quassar Capital's Disclosures.*
