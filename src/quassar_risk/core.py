@@ -3,11 +3,13 @@
 Conventions: portfolio loss L = -w^T R, where R is a vector of asset returns.
 Risk values are in return units, not currency; weights may represent leverage.
 """
+
 from __future__ import annotations
+
 import math
 import random
+from collections.abc import Sequence
 from statistics import NormalDist
-from typing import Sequence
 
 
 def _finite(x: float) -> float:
@@ -49,8 +51,10 @@ def covariance(returns: Sequence[Sequence[float]]) -> list[list[float]]:
     n, d = len(data), len(data[0])
     means = [math.fsum(row[j] for row in data) / n for j in range(d)]
     centered = [[row[j] - means[j] for j in range(d)] for row in data]
-    return [[math.fsum(row[i] * row[j] for row in centered) / (n - 1)
-             for j in range(d)] for i in range(d)]
+    return [
+        [math.fsum(row[i] * row[j] for row in centered) / (n - 1) for j in range(d)]
+        for i in range(d)
+    ]
 
 
 def portfolio_variance(weights: Sequence[float], cov: Sequence[Sequence[float]]) -> float:
@@ -84,22 +88,24 @@ def historical_var_es(losses: Sequence[float], confidence: float = 0.975) -> tup
     k = max(0, math.ceil(n * a) - 1)
     var = x[k]
     tail_count = n * (1 - a)
-    full = int(math.floor(tail_count))
+    full = math.floor(tail_count)
     fraction = tail_count - full
-    tail_sum = math.fsum(x[n-full:]) if full else 0.0
+    tail_sum = math.fsum(x[n - full :]) if full else 0.0
     if fraction > 0:
-        tail_sum += fraction * x[n-full-1]
+        tail_sum += fraction * x[n - full - 1]
     return var, tail_sum / tail_count
 
 
-def gaussian_var_es(mean_loss: float, std_loss: float, confidence: float = 0.975) -> tuple[float, float]:
+def gaussian_var_es(
+    mean_loss: float, std_loss: float, confidence: float = 0.975
+) -> tuple[float, float]:
     """Analytical Gaussian loss VaR/ES; standard deviation must be nonnegative."""
     a = _confidence(confidence)
     mu, sigma = _finite(mean_loss), _finite(std_loss)
     if sigma < 0:
         raise ValueError("standard deviation cannot be negative")
     z = NormalDist().inv_cdf(a)
-    return mu + sigma*z, mu + sigma*math.exp(-z*z/2)/math.sqrt(2*math.pi)/(1-a)
+    return mu + sigma * z, mu + sigma * math.exp(-z * z / 2) / math.sqrt(2 * math.pi) / (1 - a)
 
 
 def _cholesky_psd(cov: list[list[float]]) -> list[list[float]]:
@@ -107,23 +113,24 @@ def _cholesky_psd(cov: list[list[float]]) -> list[list[float]]:
     d = len(cov)
     scale = max(1.0, max(abs(x) for row in cov for x in row))
     tol = 1e-12 * scale
-    lower = [[0.0]*d for _ in range(d)]
+    lower = [[0.0] * d for _ in range(d)]
     for i in range(d):
-        for j in range(i+1):
-            rem = cov[i][j] - math.fsum(lower[i][k]*lower[j][k] for k in range(j))
+        for j in range(i + 1):
+            rem = cov[i][j] - math.fsum(lower[i][k] * lower[j][k] for k in range(j))
             if i == j:
                 if rem < -tol:
                     raise ValueError("covariance is not positive semidefinite")
                 lower[i][j] = math.sqrt(max(0.0, rem))
-            elif lower[j][j] > math.sqrt(tol)*1e-6:
-                lower[i][j] = rem/lower[j][j]
+            elif lower[j][j] > math.sqrt(tol) * 1e-6:
+                lower[i][j] = rem / lower[j][j]
             elif abs(rem) > tol:
                 raise ValueError("covariance is not positive semidefinite")
     return lower
 
 
-def simulate_gaussian(mean: Sequence[float], cov: Sequence[Sequence[float]],
-                      draws: int, seed: int) -> list[list[float]]:
+def simulate_gaussian(
+    mean: Sequence[float], cov: Sequence[Sequence[float]], draws: int, seed: int
+) -> list[list[float]]:
     """Reproducible Gaussian draws (local PRNG, not cryptographically secure).
 
     Covariance is population covariance for simulated innovations. No temporal
@@ -144,5 +151,7 @@ def simulate_gaussian(mean: Sequence[float], cov: Sequence[Sequence[float]],
                 raise ValueError("covariance must be symmetric")
     lower = _cholesky_psd(s)
     rng = random.Random(seed)
-    return [[mu[i] + math.fsum(lower[i][k]*z[k] for k in range(i+1))
-             for i in range(d)] for z in ([rng.gauss(0, 1) for _ in range(d)] for _ in range(draws))]
+    return [
+        [mu[i] + math.fsum(lower[i][k] * z[k] for k in range(i + 1)) for i in range(d)]
+        for z in ([rng.gauss(0, 1) for _ in range(d)] for _ in range(draws))
+    ]

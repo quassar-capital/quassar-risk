@@ -2,8 +2,16 @@
 
 from .core import (
     covariance,
-    historical_var_es,
     gaussian_var_es,
-    simulate_gaussian,
+    historical_var_es,
     portfolio_variance,
+    simulate_gaussian,
 )
+
+__all__ = [
+    "covariance",
+    "gaussian_var_es",
+    "historical_var_es",
+    "portfolio_variance",
+    "simulate_gaussian",
+]
