@@ -36,3 +36,9 @@ jobs:
 
       - name: Run tests
         run: python -m pytest -q
+
+      - name: Validate EVT Monte Carlo
+        run: PYTHONPATH=src python research/evt_monte_carlo.py
+
+      - name: Validate EVT independent replications
+        run: PYTHONPATH=src python research/evt_replication.py
