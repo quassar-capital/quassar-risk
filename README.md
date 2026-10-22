@@ -10,6 +10,54 @@ Its research scope encompasses portfolio risk decomposition, systematic and idio
 
 The methodological framework emphasizes mathematical rigor, statistical reliability, numerical accuracy, transparent assumptions, reproducibility, and disciplined interpretation of model limitations.
 
+<!-- RESEARCH_INDEX_START -->
+## Research Programs & Scientific Implementations
+
+The following research programs have corresponding scientific implementations in this repository.
+
+### Research 01 — Portfolio Risk Estimation
+
+Historical and Gaussian portfolio risk estimators.
+
+**Scientific implementation**
+
+- [`core.py`](src/quassar_risk/core.py)
+
+**Automated validation**
+
+- [`test_core.py`](tests/test_core.py)
+
+### Research 02 — Dynamic Covariance Research
+
+Dynamic covariance estimation and positive-semidefinite numerical validation.
+
+**Scientific implementation**
+
+- [`dynamic_covariance.py`](src/quassar_risk/dynamic_covariance.py)
+
+**Automated validation**
+
+- [`test_dynamic_covariance.py`](tests/test_dynamic_covariance.py)
+- [`test_ewma_psd.py`](tests/test_ewma_psd.py)
+
+### Research 03 — Extreme Value Theory
+
+Tail-risk estimation using extreme value methods and numerical experiments.
+
+**Scientific implementation**
+
+- [`extreme_value.py`](src/quassar_risk/extreme_value.py)
+
+**Automated validation**
+
+- [`test_extreme_value.py`](tests/test_extreme_value.py)
+
+**Research experiments**
+
+- [`evt_monte_carlo.py`](research/evt_monte_carlo.py)
+- [`evt_replication.py`](research/evt_replication.py)
+<!-- RESEARCH_INDEX_END -->
+
 ## Research Domains
 
 ### Portfolio Risk Analytics

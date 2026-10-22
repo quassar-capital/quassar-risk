@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "repository": "quassar-risk",
+  "research": [
+    {
+      "id": "01",
+      "title": "Portfolio Risk Estimation",
+      "description": "Historical and Gaussian portfolio risk estimators.",
+      "implementation": [
+        "src/quassar_risk/core.py"
+      ],
+      "tests": [
+        "tests/test_core.py"
+      ],
+      "experiments": []
+    },
+    {
+      "id": "02",
+      "title": "Dynamic Covariance Research",
+      "description": "Dynamic covariance estimation and positive-semidefinite numerical validation.",
+      "implementation": [
+        "src/quassar_risk/dynamic_covariance.py"
+      ],
+      "tests": [
+        "tests/test_dynamic_covariance.py",
+        "tests/test_ewma_psd.py"
+      ],
+      "experiments": []
+    },
+    {
+      "id": "03",
+      "title": "Extreme Value Theory",
+      "description": "Tail-risk estimation using extreme value methods and numerical experiments.",
+      "implementation": [
+        "src/quassar_risk/extreme_value.py"
+      ],
+      "tests": [
+        "tests/test_extreme_value.py"
+      ],
+      "experiments": [
+        "research/evt_monte_carlo.py",
+        "research/evt_replication.py"
+      ]
+    }
+  ]
+}
