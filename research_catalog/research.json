@@ -41,6 +41,39 @@
         "research/evt_monte_carlo.py",
         "research/evt_replication.py"
       ]
+    },
+    {
+      "id": "04",
+      "title": "High-Dimensional Nonlinear Risk & Automatic Differentiation",
+      "description": "Second-order automatic differentiation, matrix-free Hessian-vector products, and nonlinear Delta-Gamma risk decomposition with independently validated Python, C++17, Rust, and Julia implementations.",
+      "implementation": [
+        "research_04/python/autodiff.py",
+        "research_04/python/hessian_vector.py",
+        "research_04/python/matrix_free_hvp.py",
+        "research_04/python/delta_gamma.py",
+        "research_04/python/matrix_free_delta_gamma.py",
+        "research_04/cpp/autodiff.hpp",
+        "research_04/cpp/hessian_vector.hpp",
+        "research_04/cpp/matrix_free_hvp.hpp",
+        "research_04/cpp/matrix_free_delta_gamma.hpp",
+        "research_04/rust/autodiff.rs",
+        "research_04/rust/delta_gamma.rs",
+        "research_04/julia/MatrixFreeAD.jl"
+      ],
+      "tests": [
+        "research_04/tests/test_matrix_free_hvp.py",
+        "research_04/tests/test_delta_gamma.py",
+        "research_04/cpp/test_autodiff.cpp",
+        "research_04/cpp/test_hessian_vector.cpp",
+        "research_04/cpp/test_matrix_free_hvp.cpp",
+        "research_04/cpp/test_matrix_free_delta_gamma.cpp",
+        "research_04/rust/test_autodiff.rs",
+        "research_04/rust/test_delta_gamma.rs",
+        "research_04/julia/test_matrix_free_ad.jl"
+      ],
+      "experiments": [
+        "research_04/experiments/hvp_scaling.py"
+      ]
     }
   ]
 }

@@ -1,0 +1,82 @@
+name: Research 04 — Multilanguage Validation
+
+on:
+  pull_request:
+    paths:
+      - "research_04/**"
+      - ".github/workflows/research-04.yml"
+  push:
+    paths:
+      - "research_04/**"
+      - ".github/workflows/research-04.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    name: Python — Scientific Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pytest
+        run: python -m pip install "pytest>=8,<10"
+
+      - name: Run Research 04 tests
+        run: python -m pytest research_04/tests/ -v
+
+  cpp:
+    name: C++17 — Analytical Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile and execute C++ tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          for name in autodiff hessian_vector matrix_free_hvp matrix_free_delta_gamma; do
+            g++ -std=c++17 -O2 -Wall -Wextra -Wpedantic \
+              "research_04/cpp/test_${name}.cpp" \
+              -o "/tmp/research04_${name}"
+            "/tmp/research04_${name}"
+          done
+
+  rust:
+    name: Rust — Analytical Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Compile and execute Rust tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          for name in autodiff delta_gamma; do
+            rustc --edition=2021 -O -A dead_code \
+              "research_04/rust/test_${name}.rs" \
+              -o "/tmp/research04_rust_${name}"
+            "/tmp/research04_rust_${name}"
+          done
+
+  julia:
+    name: Julia — Scientific Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: julia-actions/setup-julia@v2
+        with:
+          version: "1"
+
+      - name: Run Julia analytical validation
+        run: julia --startup-file=no research_04/julia/test_matrix_free_ad.jl

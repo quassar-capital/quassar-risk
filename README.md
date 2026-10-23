@@ -56,6 +56,41 @@ Tail-risk estimation using extreme value methods and numerical experiments.
 
 - [`evt_monte_carlo.py`](research/evt_monte_carlo.py)
 - [`evt_replication.py`](research/evt_replication.py)
+
+### Research 04 — High-Dimensional Nonlinear Risk & Automatic Differentiation
+
+Second-order automatic differentiation, matrix-free Hessian-vector products, and nonlinear Delta-Gamma risk decomposition with independently validated Python, C++17, Rust, and Julia implementations.
+
+**Scientific implementation**
+
+- [`autodiff.py`](research_04/python/autodiff.py)
+- [`hessian_vector.py`](research_04/python/hessian_vector.py)
+- [`matrix_free_hvp.py`](research_04/python/matrix_free_hvp.py)
+- [`delta_gamma.py`](research_04/python/delta_gamma.py)
+- [`matrix_free_delta_gamma.py`](research_04/python/matrix_free_delta_gamma.py)
+- [`autodiff.hpp`](research_04/cpp/autodiff.hpp)
+- [`hessian_vector.hpp`](research_04/cpp/hessian_vector.hpp)
+- [`matrix_free_hvp.hpp`](research_04/cpp/matrix_free_hvp.hpp)
+- [`matrix_free_delta_gamma.hpp`](research_04/cpp/matrix_free_delta_gamma.hpp)
+- [`autodiff.rs`](research_04/rust/autodiff.rs)
+- [`delta_gamma.rs`](research_04/rust/delta_gamma.rs)
+- [`MatrixFreeAD.jl`](research_04/julia/MatrixFreeAD.jl)
+
+**Automated validation**
+
+- [`test_matrix_free_hvp.py`](research_04/tests/test_matrix_free_hvp.py)
+- [`test_delta_gamma.py`](research_04/tests/test_delta_gamma.py)
+- [`test_autodiff.cpp`](research_04/cpp/test_autodiff.cpp)
+- [`test_hessian_vector.cpp`](research_04/cpp/test_hessian_vector.cpp)
+- [`test_matrix_free_hvp.cpp`](research_04/cpp/test_matrix_free_hvp.cpp)
+- [`test_matrix_free_delta_gamma.cpp`](research_04/cpp/test_matrix_free_delta_gamma.cpp)
+- [`test_autodiff.rs`](research_04/rust/test_autodiff.rs)
+- [`test_delta_gamma.rs`](research_04/rust/test_delta_gamma.rs)
+- [`test_matrix_free_ad.jl`](research_04/julia/test_matrix_free_ad.jl)
+
+**Research experiments**
+
+- [`hvp_scaling.py`](research_04/experiments/hvp_scaling.py)
 <!-- RESEARCH_INDEX_END -->
 
 ## Research Domains
